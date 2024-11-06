@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section class="page-1" id="section-1">
+
+        <div class="paragraph1" >
+            <h1>Commencer la reservation</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+
+            <button class="scroll-btn" onclick="scrollPage('section-2')">Next</button>
+
+       </div>
+   
+    </section>
+
+
+    <section class="page-2" id="section-2">
+
+        <div class='gare-card2'>
+            <h1>La gare et la date</h1>
+            <select style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+              <option value="">La gare de départ</option>
+              <option value="">Marrakech</option>
+              <option value="">Agadir</option>
+              <option value="">Tanger</option>
+            </select>
+            <select style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+              <option value="">La gare d'arriver</option>
+              <option value="">Paris</option>
+              <option value="">Londre</option>
+              <option value="">Machester</option>
+            </select>
+            <input type="date" style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
+          </div>
+          <button class="scroll-btn" onclick="scrollPage('section-3')">Next</button>
+
+    </section>
+
+
+    <section class="page-3" id="section-3">
+    </div>
+    <div class='result-rechercher3'>
+      <h1>Les resultat de recherche</h1>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+            <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+            <span>6:30</span>
+            <img width="50px" src="images/airplane.png" alt="">
+            <span>8:45</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+            <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+            <span>6:30</span>
+            <img width="50px" src="images/airplane.png" alt="">
+            <span>8:45</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+            <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+            <span>6:30</span>
+            <img width="50px" src="images/airplane.png" alt="">
+            <span>8:45</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+            <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+            <span>6:30</span>
+            <img width="50px" src="images/airplane.png" alt="">
+            <span>8:45</span>
+        </div>
+      </div>
+      <button class="scroll-btn" onclick="scrollPage('section-4')">Next</button>
+
+    </section>
+
+    <section class="page-4" id="section-4">
+
+        <div class='voyageurs-tickets4'>
+            <h1>Voyageurs</h1>
+              <div style="display: flex; justify-content: space-between; padding: 10px;">
+                  <div>
+                      <h4>Adult (Prix 500DH)</h4>
+                      <div style="display: flex; align-items: center; gap: 10px;">
+                          <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                          <span>1</span>
+                          <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                      </div>
+                  </div>
+                  <div style="width: 5px; background-color: #2e6c8e;"></div>
+                  <div>
+                      <h4>Enfant (Prix 100DH)</h4>
+                      <div style="display: flex; align-items: center; gap: 10px;">
+                          <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                          <span>1</span>
+                          <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                      </div>
+                  </div>
+              </div>
+              <h4>Choisissez votre place</h4>
+              <div style="display: grid; justify-content: center; grid-template-columns: auto auto auto auto; gap: 20px;">
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                  <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+              </div>
+              <h4>Prix Total : 0000DH</h4>
+          </div>
+
+    </section>
+   
+<script src="script.js"></script>
+</body>
+</html>
