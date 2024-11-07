@@ -14,7 +14,7 @@
             <h1>Commencer la reservation</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
 
-            <button class="scroll-btn" onclick="scrollPage('section-2')">Next</button>
+            <button class="scroll-btn" onclick="scrollintrodPage('section-2')">Next</button>
 
        </div>
    
@@ -25,21 +25,24 @@
 
         <div class='gare-card2'>
             <h1>La gare et la date</h1>
-            <select style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
-              <option value="">La gare de départ</option>
-              <option value="">Marrakech</option>
-              <option value="">Agadir</option>
-              <option value="">Tanger</option>
+                <input id="fullName" class="name_email" type="text" placeholder="Full Name" required style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;" >
+            <input id="email" class="name_email"type="text" placeholder="Email" required style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;" >
+            <select id="etatDepart" required style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+              <option  value="">La gare de départ</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Tanger">Tanger</option>
             </select>
-            <select style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+            <select id="etatArrive" style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
               <option value="">La gare d'arriver</option>
-              <option value="">Paris</option>
-              <option value="">Londre</option>
-              <option value="">Machester</option>
+              <option value="Paris">Paris</option>
+              <option value="Londre">Londre</option>
+              <option value="Machester">Machester</option>
             </select>
-            <input type="date" style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
+            <input id="date" type="date" required style="margin-top: 10px; padding: 15px 20px; width: 400px; text-align: center; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
           </div>
           <button class="scroll-btn" onclick="scrollPage('section-3')">Next</button>
+          <button onclick="submitFunct()">submit</button>
 
     </section>
 
@@ -114,7 +117,35 @@
               </div>
               <h4>Prix Total : 0000DH</h4>
           </div>
+          <button class="scroll-btn" onclick="scrollPage('section-5')">Next</button>
 
+    </section>
+
+    
+
+
+
+    <section class="page-5" id="section-5">
+
+        <div class='form-page5'>
+            <h1>Les tickets</h1>
+            
+            <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
+            <div class="card content">
+              <div class="user-info">
+                <p>Nom et prénom : <span>AZIZ</span></p>
+                <p>E-mail : <span>test.aziz@gmail.com</span></p>
+                <p>Date de réservation : <span>12/15/48</span></p>
+                <p>Prix : <span>00000DH</span></p>
+              </div>
+              <div class="qr-code">
+                <p>Code QR :</p>
+                <img src="images/qr-code.svg" alt="code QR"/>
+              </div>
+            </div>
+            </div>
+          
+          </div>
     </section>
    
 <script src="script.js"></script>
