@@ -1,26 +1,20 @@
-var formData={};
 
-function submitFunct(){
-
-    // var formData={};
-
-//     formData["fullName"]=document.getElementById("fullName").value;
-//     formData["email"]=document.getElementById("email").value;
-//     formData["etatDepart"]=document.getElementById("etatDepart").value;
-//     formData["etatArrive"]=document.getElementById("etatArrive").value;
-//     formData["date"]=document.getElementById("date").value;
-//     console.log(formData)
-
-// return formData;
-
-
-
-    }
  
 
 
+let arrayTable = [];  
+function getData() {
+     arrayTable = [
+        document.getElementById("fullName").value,    
+        document.getElementById("email").value,       
+        document.getElementById("etatDepart").value,  
+        document.getElementById("etatArrive").value,  
+        document.getElementById("date").value         
+    ];
 
-
+    console.log(arrayTable);   
+    return arrayTable;
+}
 function scrollintrodPage(sectionId) {
     const section = document.getElementById(sectionId);
     section.scrollIntoView({
@@ -33,20 +27,16 @@ function scrollintrodPage(sectionId) {
 
 
 function scrollPage(sectionId) {
-    let inputValue=document.getElementById("fullName").value;
-    let email=document.getElementById("email").value;
-    let etatDepart=document.getElementById("etatDepart").value;
-    let etatArrive=document.getElementById("etatArrive").value;
-    let date=document.getElementById("date").value;
-
-    if(inputValue && email && etatDepart && etatArrive && date){
+   
+    getData();
+ 
+    if(arrayTable[0]!=="" && arrayTable[1]!=="" && arrayTable[2]!=="" && arrayTable[3]!=="" && arrayTable[4]!==""){
     
-       console.log(inputValue)   
-       console.log(email)   
-       console.log(etatDepart)   
-       console.log(etatArrive)   
-       console.log(date)   
-       
+       console.log(arrayTable[0])   
+       console.log(arrayTable[1])   
+       console.log(arrayTable[2])   
+       console.log(arrayTable[3])   
+       console.log(arrayTable[4])   
        const section = document.getElementById(sectionId);
        section.scrollIntoView({
            behavior: 'smooth',
@@ -57,12 +47,7 @@ function scrollPage(sectionId) {
         
         }else{
             alert("entrer les info ");
-        }
-
-
-
-    
-       
+        }       
     }
    
  
