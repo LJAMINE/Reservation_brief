@@ -50,7 +50,7 @@ function scrollPage(sectionId) {
         }       
     }
    
- 
+ //----------------------------------------------------------------------------------
 
 
    let  plusValeurAdult=document.querySelector(".plusbuttonAdult")
@@ -61,8 +61,10 @@ function scrollPage(sectionId) {
     let numbeerMoins=document.querySelector('#numbeerSmall')
 
 
-    // adult
+    // adult-----------------------
 
+
+//plus o mois button adult
 
 let i=0;
     plusValeurAdult.addEventListener("click",function(){
@@ -80,7 +82,7 @@ let i=0;
      if(i>0){
         i--;
         numbeerAdult.innerHTML=i
-
+ 
      }else{
         i=0;
      }
@@ -88,41 +90,176 @@ let i=0;
 
     })
 
+        // adult-----------------------
 
-    //pas adult
 
+
+    //enfant-------------------------------------------------------
+
+//plus o mois button enfant
+let z=0
     plusValeurMoins.addEventListener("click",function(){
     
 
 
-        if(i<10)    
-            i=i+1;
-            numbeerMoins.innerHTML=i
+        if(z<10)    
+            z=z+1;
+            numbeerMoins.innerHTML=z
     })
 
 
     moinsValeurMoins.addEventListener("click",()=>{
 
-     if(i>0){
-        i--;
-        numbeerMoins.innerHTML=i
+     if(z>0){
+        z--;
+        numbeerMoins.innerHTML=z
 
      }else{
-        i=0;
+        z=0;
      }
 
 
     })
 
 
-
-
-    let prixAdult=document.querySelector('#prixAdult');
-
-    console.log(prixAdult)
+    //enfant-------------------------------------------------------
 
 
 
+
+
+
+   // calcuuele total sur  button--------------------------------------
+
+   //adult-------------------------------------------------------------
+
+    plusValeurAdult.addEventListener("click",function(){
+    
+            let a=0;
+            let sum=0;
+            a=a+500;
+ 
+            sum+=500*i;
+
+            console.log(a)
+            console.log(sum)
+
+     document.querySelector('#newPrixAdult').innerHTML=`prix total : ${sum} dh  `
+
+
+
+    })
+
+
+    moinsValeurAdult.addEventListener("click",function(){
+    
+
+
+     
+            let a=0;
+            let sum=0;
+            a=a-500;
+ 
+            sum+=500*i;
+
+            console.log(a)
+            console.log(sum)
+
+     document.querySelector('#newPrixAdult').innerHTML=`prix total : ${sum} dh  `
+
+
+
+    })
+
+   //adult-------------------------------------------------------------
+
+      // start enfant-------------------------------------------------------------
+
+
+    plusValeurMoins.addEventListener("click",function(){
+    
+
+
+   
+
+            let b=0;
+            let sumMois=0;
+            b=b+500;
+ 
+            sumMois+=100*z;
+
+            console.log(b)
+            console.log(sumMois)
+
+     document.querySelector('#newPrixMoins').innerHTML=`prix total : ${sumMois} dh  `
+
+
+
+    })
+
+
+    moinsValeurMoins.addEventListener("click",function(){
+ 
+            let c=0;
+            let sumMois=0;
+            c=c-100;
+            sumMois+=100*z;
+
+            console.log(c)
+            console.log(sumMois)
+
+     document.querySelector('#newPrixMoins').innerHTML=`prix total :  ${sumMois} dh  `
+
+
+
+    })
+
+          //fin enfant-------------------------------------------------------------
+
+
+   
+
+
+  
+
+//final prix totalll
+
+
+          let  buttonTotal=document.querySelector('#totttal')
+
+   buttonTotal.addEventListener("click",function(){ 
+   let  ValueTotal=document.querySelector('#prixTotal')
+   let  prixTotalAdult=document.querySelector('#newPrixAdult')
+   let  prixTotalEnfant=document.querySelector('#newPrixMoins')
+
+   console.log(ValueTotal);
+   console.log(prixTotalAdult);
+   console.log(prixTotalEnfant);
+       var sumTottal=0; 
+
+       console.log("amineeeeee")
+
+
+        sumTottal===prixTotalAdult+prixTotalEnfant
+
+   console.log(sumTottal);
+
+
+        
+    
+
+
+        
+
+       
+        // console.log(sumTottal);
+
+ document.querySelector('#prixTotal').innerHTML=`prix total :  ${sumTottal} dh `
+
+
+
+}
+)
 
     
 

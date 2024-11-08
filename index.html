@@ -88,18 +88,21 @@
               <div style="display: flex; justify-content: space-between; padding: 10px;">
                   <div>
                       <h4 id="prixAdult">Adult (Prix 500DH)</h4> 
+                      <h4 id="newPrixAdult"></h4>
                       <div style="display: flex; align-items: center; gap: 10px;">
                           <button class="plusbuttonAdult" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
-                          <span id="numbeerAdult">0</span>
+                          <span id="numbeerAdult">1</span>
                           <button  class="minusbuttonAdult" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                       </div>
                   </div>
                   <div style="width: 5px; background-color: #2e6c8e;"></div>
                   <div>
-                      <h4>Enfant (Prix 100DH)</h4>
+                      <h4 id="idEnfant">Enfant (Prix 100DH)</h4>
+                      <h4 id="newPrixMoins"></h4>
+
                       <div style="display: flex; align-items: center; gap: 10px;">
                           <button class="plusbuttonSmall" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
-                          <span id="numbeerSmall" >0</span>
+                          <span id="numbeerSmall" >1</span>
                           <button  class="moinsbuttonSmall"style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                       </div>
                   </div>
@@ -115,7 +118,11 @@
                   <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                   <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
               </div>
-              <h4>Prix Total : 0000DH</h4>
+              <button type="submit" id="totttal">totale</button>
+              <h4 id="prixTotal">Prix Total : 0000DH</h4>
+           
+
+
           </div>
           <button class="scroll-btn" onclick="scrollPage('section-5')">Next</button>
 
