@@ -15,6 +15,8 @@ function getData() {
     console.log(arrayTable);   
     return arrayTable;
 }
+
+
 function scrollintrodPage(sectionId) {
     const section = document.getElementById(sectionId);
     section.scrollIntoView({
@@ -30,13 +32,17 @@ function scrollPage(sectionId) {
    
     getData();
  
-    if(arrayTable[0]!=="" && arrayTable[1]!=="" && arrayTable[2]!=="" && arrayTable[3]!=="" && arrayTable[4]!==""){
+    if(arrayTable[0]!==""
+         && arrayTable[1]!=="" && arrayTable[2]!=="" && arrayTable[3]!=="" && arrayTable[4]!==""
+        
+        ){
     
        console.log(arrayTable[0])   
        console.log(arrayTable[1])   
        console.log(arrayTable[2])   
        console.log(arrayTable[3])   
        console.log(arrayTable[4])   
+
        const section = document.getElementById(sectionId);
        section.scrollIntoView({
            behavior: 'smooth',
@@ -71,9 +77,11 @@ let i=0;
     
 
 
-        if(i<10)    
+        if(i<10) {
             i=i+1;
             numbeerAdult.innerHTML=i
+        }   
+           
     })
 
 
@@ -83,8 +91,6 @@ let i=0;
         i--;
         numbeerAdult.innerHTML=i
  
-     }else{
-        i=0;
      }
 
 
@@ -102,9 +108,12 @@ let z=0
     
 
 
-        if(z<10)    
+        if(z<10) {
             z=z+1;
             numbeerMoins.innerHTML=z
+
+        }   
+           
     })
 
 
@@ -114,8 +123,6 @@ let z=0
         z--;
         numbeerMoins.innerHTML=z
 
-     }else{
-        z=0;
      }
 
 
@@ -144,7 +151,7 @@ let z=0
             console.log(a)
             console.log(sum)
 
-     document.querySelector('#newPrixAdult').innerHTML=`prix total : ${sum} dh  `
+     document.querySelector('#newPrixAdult').innerHTML=`${sum}`
 
 
 
@@ -165,7 +172,7 @@ let z=0
             console.log(a)
             console.log(sum)
 
-     document.querySelector('#newPrixAdult').innerHTML=`prix total : ${sum} dh  `
+     document.querySelector('#newPrixAdult').innerHTML=`${sum}`
 
 
 
@@ -191,7 +198,7 @@ let z=0
             console.log(b)
             console.log(sumMois)
 
-     document.querySelector('#newPrixMoins').innerHTML=`prix total : ${sumMois} dh  `
+     document.querySelector('#newPrixMoins').innerHTML=`${sumMois}`
 
 
 
@@ -208,7 +215,7 @@ let z=0
             console.log(c)
             console.log(sumMois)
 
-     document.querySelector('#newPrixMoins').innerHTML=`prix total :  ${sumMois} dh  `
+     document.querySelector('#newPrixMoins').innerHTML=`${sumMois}`
 
 
 
@@ -225,43 +232,75 @@ let z=0
 //final prix totalll
 
 
-          let  buttonTotal=document.querySelector('#totttal')
-
-   buttonTotal.addEventListener("click",function(){ 
-   let  ValueTotal=document.querySelector('#prixTotal')
-   let  prixTotalAdult=document.querySelector('#newPrixAdult')
-   let  prixTotalEnfant=document.querySelector('#newPrixMoins')
-
-   console.log(ValueTotal);
-   console.log(prixTotalAdult);
-   console.log(prixTotalEnfant);
-       var sumTottal=0; 
-
-       console.log("amineeeeee")
 
 
-        sumTottal===prixTotalAdult+prixTotalEnfant
+let buttonTotal = document.querySelector('#totttal');
 
-   console.log(sumTottal);
-
-
-        
+buttonTotal.addEventListener("click", function () {
+    let ValueTotal = document.querySelector('#prixTotal');
+    let valueTotall1=document.querySelector('#newPrixAdult').innerText;
+  let valueTotall2 = document.querySelector('#newPrixMoins').innerText
     
+    let adultPrix = parseInt(valueTotall1);
+    let childPrix = parseInt(valueTotall2);
+
+    let sumTottal = adultPrix + childPrix;
+
+    console.log(sumTottal)
+    ValueTotal.innerHTML = ` total : ${sumTottal} dh`;
+});
 
 
-        
-
-       
-        // console.log(sumTottal);
-
- document.querySelector('#prixTotal').innerHTML=`prix total :  ${sumTottal} dh `
 
 
 
-}
-)
 
-    
+
+let myformButton=document.getElementById("formulaire")
+
+myformButton.addEventListener("click",function(){
+
+    getData();
+ let newFullName=document.getElementById("fullname")
+ let email=document.getElementById("fullEmail")
+ let etatDepart=document.getElementById("depart")
+ let etatArrive=document.getElementById("arrivee")
+//  let dateRes=document.getElementById("dateFinal")
+let oldvaleur=document.getElementById("finalPricce")
+let ValueTotal = document.querySelector('#prixTotal').innerText;
+
+
+
+ 
+
+ console.log(ValueTotal)
+
+ newFullName.innerText=arrayTable[0]
+  email.innerText=arrayTable[1]
+  etatDepart.innerText=arrayTable[2]
+  etatArrive.innerText=arrayTable[3]
+//   dateRes.innerText=arrayTable[4]
+
+oldvaleur.innerText=ValueTotal
+
+console.log(oldvaleur)
+
+
+
+
+
+
+//   console.log(newFullName)
+
+
+
+   
+  
+
+
+})
+
+
 
 
 

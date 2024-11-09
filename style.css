@@ -120,8 +120,18 @@ section {
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
+    margin-right: 20px;
 }
-
+.scroll-btnForm {
+    padding: 10px 20px;
+    background-color: #2e6c8e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 14px;
+ }
 .scroll-btn:hover {
     background-color: #1d4f68;
 }
@@ -137,7 +147,7 @@ h4{
 
 .card {
     width: 35%;
-    height: 75%;
+    height: 85%;
     border-radius: 1em 1em 0 0;
     position: relative;
 }
@@ -167,15 +177,9 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    padding: 1em;
+    padding-bottom: 1em;
 }
-.user-info {
-    /* padding: 20px; */
-    /* gap: 20px; */
-    
-    /* padding-bottom: 60px; */
-    /* margin: 40px; */
-}
+
 .qr-code {
     position: absolute;
     bottom: 0;
