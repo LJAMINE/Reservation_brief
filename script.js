@@ -251,7 +251,7 @@ buttonTotal.addEventListener("click", function () {
 });
 
 
-
+//formulaire
 
 
 
@@ -265,7 +265,9 @@ myformButton.addEventListener("click",function(){
  let email=document.getElementById("fullEmail")
  let etatDepart=document.getElementById("depart")
  let etatArrive=document.getElementById("arrivee")
-//  let dateRes=document.getElementById("dateFinal")
+
+ let dateRes=document.getElementById("dateFinal")
+
 let oldvaleur=document.getElementById("finalPricce")
 let ValueTotal = document.querySelector('#prixTotal').innerText;
 
@@ -274,12 +276,18 @@ let ValueTotal = document.querySelector('#prixTotal').innerText;
  
 
  console.log(ValueTotal)
+ console.log(arrayTable[4])
+
 
  newFullName.innerText=arrayTable[0]
   email.innerText=arrayTable[1]
   etatDepart.innerText=arrayTable[2]
   etatArrive.innerText=arrayTable[3]
-//   dateRes.innerText=arrayTable[4]
+  dateRes.innerText=arrayTable[4]
+
+  console.log(dateRes)
+
+
 
 oldvaleur.innerText=ValueTotal
 
@@ -300,10 +308,33 @@ console.log(oldvaleur)
 
 })
 
+// let arrayFormule = [];  
+// function getformul() {
+//     arrayFormule = [
+
+//         // newFullName,email,etatDepart,etatArrive,dateRes,oldvaleur
+//         document.getElementById("fullname").value,    
+//         document.getElementById("fullEmail").value,       
+//         document.getElementById("depart").value,  
+//         document.getElementById("arrivee").value,  
+//         document.getElementById("dateFinal").value     ,    
+//         document.getElementById("finalPricce").value         
+//     ];
+
+//     console.log(arrayFormule);   
+//     return arrayFormule;
+
+// }
 
 
 
 
+
+function printForm() {
+    // Select the form element you want to print
+    const element = document.getElementById("myformule");
+    html2pdf().from(element).save();
+}
 
 
 
