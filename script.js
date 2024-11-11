@@ -65,6 +65,7 @@ function scrollPage(sectionId) {
     let  plusValeurMoins=document.querySelector(".plusbuttonSmall")
     let moinsValeurMoins=document.querySelector(".moinsbuttonSmall")
     let numbeerMoins=document.querySelector('#numbeerSmall')
+    let checkbox=document.querySelectorAll('.checkbox')
 
 
     // adult-----------------------
@@ -73,17 +74,24 @@ function scrollPage(sectionId) {
 //plus o mois button adult
 
 let i=0;
+//  let count = 0
     plusValeurAdult.addEventListener("click",function(){
     
 
-
         if(i<10) {
             i=i+1;
+            // count= i
             numbeerAdult.innerHTML=i
         }   
-           
+ 
     })
+    // let test=document.querySelector('#test')
+    // test.addEventListener("click",() => {
+    //     console.log("adult");
 
+    //     console.log(count);
+
+    // })
 
     moinsValeurAdult.addEventListener("click",()=>{
 
@@ -96,7 +104,12 @@ let i=0;
 
     })
 
-        // adult-----------------------
+
+    
+  
+       
+
+        // fin adult-----------------------
 
 
 
@@ -104,18 +117,28 @@ let i=0;
 
 //plus o mois button enfant
 let z=0
+// let countEnfd = 0
+
     plusValeurMoins.addEventListener("click",function(){
     
 
 
         if(z<10) {
             z=z+1;
+            // countEnfd= z
+            
             numbeerMoins.innerHTML=z
 
         }   
            
     })
+    // let testenf=document.querySelector('#test2')
+    // testenf.addEventListener("click",() => {
 
+    //     console.log("enfant");
+    //     console.log(countEnfd);
+
+    // })
 
     moinsValeurMoins.addEventListener("click",()=>{
 
@@ -128,12 +151,33 @@ let z=0
 
     })
 
+    // let testFin=document.querySelector('#test2')
+    // testenf.addEventListener("click",() => {
 
-    //enfant-------------------------------------------------------
+    //     console.log("finale");
+    //     console.log(countEnfd+count);
+
+    // })
+
+
+    // fin enfant-------------------------------------------------------
 
 
 
 
+
+    for( let j=0;j<8;j++){
+
+    checkbox[j].onclick=function(){
+        var checknbr=document.querySelectorAll(".checkbox:checked")
+        if (checknbr.length>i+z){
+            this.checked=false;
+            alert("ne pas depasse")
+        }
+    }
+
+
+    }
 
 
    // calcuuele total sur  button--------------------------------------
@@ -148,8 +192,10 @@ let z=0
  
             sum+=500*i;
 
-            console.log(a)
-            console.log(sum)
+            // console.log(a)
+            // console.log(sum)
+            // console.log(i)
+
 
      document.querySelector('#newPrixAdult').innerHTML=`${sum}`
 
@@ -168,9 +214,11 @@ let z=0
             a=a-500;
  
             sum+=500*i;
+            // console.log(i)
 
-            console.log(a)
-            console.log(sum)
+
+            // console.log(a)
+            // console.log(sum)
 
      document.querySelector('#newPrixAdult').innerHTML=`${sum}`
 
@@ -178,7 +226,11 @@ let z=0
 
     })
 
-   //adult-------------------------------------------------------------
+    // console.log(z)
+
+   
+
+   // fin   adult-------------------------------------------------------------
 
       // start enfant-------------------------------------------------------------
 
@@ -191,12 +243,14 @@ let z=0
 
             let b=0;
             let sumMois=0;
-            b=b+500;
+            b=b+100;
  
             sumMois+=100*z;
 
-            console.log(b)
-            console.log(sumMois)
+            // console.log(z)
+
+            // console.log(b)
+            // console.log(sumMois)
 
      document.querySelector('#newPrixMoins').innerHTML=`${sumMois}`
 
@@ -212,10 +266,15 @@ let z=0
             c=c-100;
             sumMois+=100*z;
 
-            console.log(c)
-            console.log(sumMois)
+            console.log(z)
+
+            // console.log(c)
+            // console.log(sumMois)
 
      document.querySelector('#newPrixMoins').innerHTML=`${sumMois}`
+
+
+
 
 
 
@@ -308,37 +367,26 @@ console.log(oldvaleur)
 
 })
 
-// let arrayFormule = [];  
-// function getformul() {
-//     arrayFormule = [
-
-//         // newFullName,email,etatDepart,etatArrive,dateRes,oldvaleur
-//         document.getElementById("fullname").value,    
-//         document.getElementById("fullEmail").value,       
-//         document.getElementById("depart").value,  
-//         document.getElementById("arrivee").value,  
-//         document.getElementById("dateFinal").value     ,    
-//         document.getElementById("finalPricce").value         
-//     ];
-
-//     console.log(arrayFormule);   
-//     return arrayFormule;
-
-// }
-
-
-
-
-
 function printForm() {
-    // Select the form element you want to print
+
     const element = document.getElementById("myformule");
     html2pdf().from(element).save();
 }
 
 
 
- 
+
+// function  calcULE5(){
+
+//     let varSpan=document.getElementById("numbeerAdult").innerText
+    
+//     console.log(parseInt(varSpan))
+    
+    
+    
+// }
+
+// calcULE5()
 
 
 
