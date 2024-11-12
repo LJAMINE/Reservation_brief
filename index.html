@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
- 
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
-    <!-- <script src=
-    "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
-          </script> -->
 
 </head>
 <body>
@@ -22,7 +16,7 @@
             <h1>Commencer la reservation</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
 
-            <button class="scroll-btn" onclick="scrollintrodPage('section-4')">Next</button>
+            <button class="scroll-btn" onclick="scrollintrodPage('section-2')">Next</button>
 
        </div>
    
@@ -54,7 +48,6 @@
 
           
     </section>
-
 
     <section class="page-3" id="section-3">
     </div>
@@ -135,20 +128,19 @@
               <button class="scroll-btn" type="submit" id="totttal">total</button>
           </div>
 
-    </section>
-
-    
-
-
+       </section>
 
     <section class="page-5" id="section-5">
+        <!-- <p>Total Tickets: <span id="totalTicketsDisplay">0</span></p> -->
+
 
         <div class='form-page5' id="myformule">
-            <h1>Les tickets</h1>
+
+            <!-- <h1>Les tickets</h1>
             
             <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
-            <div class="card content">
-              <div class="user-info">
+            <div class="card content" id="newFormss">
+              <div class="user-info" id="mynewInfo">
                 <p>fuullname : <span id="fullname"></span></p>
                 <p>E-mail : <span id="fullEmail"></span></p>
                 <p>Depart : <span id="depart"></span></p>
@@ -162,18 +154,19 @@
 
               </div>
             </div>
+            </div>
 
 
 
             </div>
+            -->
             <button class="scroll-btnForm" type="submit" id="formulaire">click</button>
             <button class="scroll-btnForm" type="button" onclick="printForm()">print</button>
-
-
-          </div>
-
+            <button class="scroll-btnForm" type="button" id="addFormulaire" >add other</button>
+            
+        </div>
+        
     </section>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
    
 <script src="script.js"></script>
 </body>
