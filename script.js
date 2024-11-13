@@ -1,16 +1,44 @@
-let arrayTable = [];
-function getData() {
-  arrayTable = [
-    document.getElementById("fullName").value,
-    document.getElementById("email").value,
-    document.getElementById("etatDepart").value,
-    document.getElementById("etatArrive").value,
-    document.getElementById("date").value,
-  ];
+//regex
+function validEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailPattern.test(email);
+}
+//date
 
+function validDate(date) {
+  const today = new Date();
+
+  today.setHours(0, 0, 0, 0);
+
+  const inputDate = new Date(date);
+
+  return inputDate >= today;
+}
+
+function getData() {
+  const fullName = document.getElementById("fullName").value;
+  const email = document.getElementById("email").value;
+  const etatDepart = document.getElementById("etatDepart").value;
+  const etatArrive = document.getElementById("etatArrive").value;
+  const date = document.getElementById("date").value;
+
+  // Email valid
+  if (!validEmail(email)) {
+    alert("plz valid email .");
+    return false;
+  }
+
+  // Date valids
+  if (!validDate(date)) {
+    alert("valid date plz.");
+    return false;
+  }
+
+  arrayTable = [fullName, email, etatDepart, etatArrive, date];
   console.log(arrayTable);
   return arrayTable;
 }
+
 
 function scrollintrodPage(sectionId) {
   const section = document.getElementById(sectionId);
@@ -186,48 +214,50 @@ buttonTotal.addEventListener("click", function () {
 
 //formulaire
 
-let myformButton = document.getElementById("formulaire");
+// let myformButton = document.getElementById("formulaire");
 
-myformButton.addEventListener("click", function () {
-  getData();
-  let newFullName = document.getElementById("fullname");
-  let email = document.getElementById("fullEmail");
-  let etatDepart = document.getElementById("depart");
-  let etatArrive = document.getElementById("arrivee");
+// myformButton.addEventListener("click", function () {
+//   getData();
+//   let newFullName = document.getElementById("fullname");
+//   let email = document.getElementById("fullEmail");
+//   let etatDepart = document.getElementById("depart");
+//   let etatArrive = document.getElementById("arrivee");
 
-  let dateRes = document.getElementById("dateFinal");
+//   let dateRes = document.getElementById("dateFinal");
 
-  let oldvaleur = document.getElementById("finalPricce");
-  let ValueTotal = document.querySelector("#prixTotal").innerText;
+//   let oldvaleur = document.getElementById("finalPricce");
+//   let ValueTotal = document.querySelector("#prixTotal").innerText;
 
-  console.log(ValueTotal);
-  console.log(arrayTable[4]);
+//   console.log(ValueTotal);
+//   console.log(arrayTable[4]);
 
-  newFullName.innerText = arrayTable[0];
-  email.innerText = arrayTable[1];
-  etatDepart.innerText = arrayTable[2];
-  etatArrive.innerText = arrayTable[3];
-  dateRes.innerText = arrayTable[4];
+//   newFullName.innerText = arrayTable[0];
+//   email.innerText = arrayTable[1];
+//   etatDepart.innerText = arrayTable[2];
+//   etatArrive.innerText = arrayTable[3];
+//   dateRes.innerText = arrayTable[4];
 
-  console.log(dateRes);
+//   console.log(dateRes);
 
-  oldvaleur.innerText = ValueTotal;
+//   oldvaleur.innerText = ValueTotal;
 
-  console.log(oldvaleur);
+//   console.log(oldvaleur);
 
-  //   console.log(newFullName)
-});
+//   //   console.log(newFullName)
+// });
 
-for (let j = 0; j < 8; j++) {
+//checkbox
+
+for (let j = 0; j < checkbox.length; j++) {
   checkbox[j].onclick = function () {
-    var checknbr = document.querySelectorAll(".checkbox:checked");
-    if (checknbr.length > i + z) {
+    const checknbr = document.querySelectorAll(".checkbox:checked");
+    const maximum = i + z;
+    if (checknbr.length > maximum) {
       this.checked = false;
-      alert("ne pas depasse");
+      alert(`no  more  ${maximum} checkbox.`);
     }
   };
 }
-
 // form pdf
 function printForm() {
   const element = document.getElementById("myformule");
@@ -267,6 +297,8 @@ btnShowFormil.addEventListener("click", () => {
           </div>
 
         </div>
+                            <button class="scroll-btnForm" type="button" onclick="printForm()">print</button>
+
         
       `;
     myResults.insertAdjacentHTML("beforeend", newAdultForm);
