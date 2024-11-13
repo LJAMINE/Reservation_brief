@@ -131,7 +131,10 @@ moinsValeurAdult.addEventListener("click", function () {
   sum += 500 * i;
 
   document.querySelector("#newPrixAdult").innerHTML = `${sum}`;
+  console.log(a);
 });
+
+// nbr 100*1 or 100*2
 
 // fin   adult-------------------------------------------------------------
 
@@ -148,14 +151,17 @@ plusValeurMoins.addEventListener("click", function () {
 });
 
 moinsValeurMoins.addEventListener("click", function () {
-  let c = 0;
+  let b = 0;
   let sumMois = 0;
-  c = c - 100;
+  b = b - 100;
   sumMois += 100 * z;
+
+  // let valB=b.value;
 
   console.log(z);
 
   document.querySelector("#newPrixMoins").innerHTML = `${sumMois}`;
+  console.log(b);
 });
 
 //fin enfant-------------------------------------------------------------
@@ -233,31 +239,61 @@ function printForm() {
 let btnShowFormil = document.getElementById("addFormulaire");
 
 btnShowFormil.addEventListener("click", () => {
-  if (i != 0) {
-    getData();
-    console.log(arrayTable);
+  getData();
+  console.log(arrayTable);
 
-    let myResults = document.getElementById("myformule");
+  let myResults = document.getElementById("myformule");
+  const adulltPrice = 500;
 
-    for (let countAdult = 0; countAdult < i; countAdult++) {
-      const newForm = `
+  const enffantPrix = 100;
+  myResults.innerHTML = "";
+
+  for (let countAdult = 0; countAdult < i; countAdult++) {
+    const newAdultForm = `
         <div style="height: 500px; display: flex; justify-content: center; align-items: center;">
-          <div class="card content" id="newFormss${countAdult}">
-            <div class="user-info" id="mynewInfo${countAdult}">
-              <p>Full Name: <span id="fullname${countAdult}">${arrayTable[0]}</span></p>
-              <p>Email: <span id="fullEmail${countAdult}">${arrayTable[1]}</span></p>
-              <p>Depart: <span id="depart${countAdult}">${arrayTable[2]}</span></p>
-              <p>Arrivee: <span id="arrivee${countAdult}">${arrayTable[3]}</span></p>
-              <p>Date: <span id="dateFinal${countAdult}">${arrayTable[4]}</span></p>
+          <div class="card content" id="newFormAdult${countAdult}">
+            <div class="user-info">
+              <p>Full Name: <span id="fullnameAdult${countAdult}">${arrayTable[0]}</span></p>
+              <p>Email: <span id="fullEmailAdult${countAdult}">${arrayTable[1]}</span></p>
+              <p>Depart: <span id="departAdult${countAdult}">${arrayTable[2]}</span></p>
+              <p>Arrivee: <span id="arriveeAdult${countAdult}">${arrayTable[3]}</span></p>
+              <p>Date: <span id="dateFinalAdult${countAdult}">${arrayTable[4]}</span></p>
+              <p>Prix: <span id="finalPriceAdult">${adulltPrice} dh</span></p>
             </div>
             <div class="qr-code">
               <p>Code QR :</p>
               <img src="images/qr-code.svg" alt="QR Code"/>
             </div>
           </div>
+
         </div>
+        
       `;
-      myResults.insertAdjacentHTML("beforeend", newForm);
-    }
+    myResults.insertAdjacentHTML("beforeend", newAdultForm);
+  }
+
+  for (let countChild = 0; countChild < z; countChild++) {
+    const newChildForm = `
+        <div style="height: 500px; display: flex; justify-content: center; align-items: center;">
+          <div class="card content" id="newFormChild${countChild}">
+            <div class="user-info">
+              <p>Full Name: <span id="fullnameChild${countChild}">${arrayTable[0]}</span></p>
+              <p>Email: <span id="fullEmailChild${countChild}">${arrayTable[1]}</span></p>
+              <p>Depart: <span id="departChild${countChild}">${arrayTable[2]}</span></p>
+              <p>Arrivee: <span id="arriveeChild${countChild}">${arrayTable[3]}</span></p>
+              <p>Date: <span id="dateFinalChild${countChild}">${arrayTable[4]}</span></p>
+              <p>Prix: <span id="finalPriceChild">${enffantPrix} dh</span></p>
+            </div>
+            <div class="qr-code">
+              <p>Code QR :</p>
+              <img src="images/qr-code.svg" alt="QR Code"/>
+            </div>
+          </div>
+
+        </div>
+                    <button class="scroll-btnForm" type="button" onclick="printForm()">print</button>
+
+      `;
+    myResults.insertAdjacentHTML("beforeend", newChildForm);
   }
 });
