@@ -39,7 +39,6 @@ function getData() {
   return arrayTable;
 }
 
-
 function scrollintrodPage(sectionId) {
   const section = document.getElementById(sectionId);
   section.scrollIntoView({
@@ -212,40 +211,6 @@ buttonTotal.addEventListener("click", function () {
   ValueTotal.innerHTML = ` total : ${sumTottal} dh`;
 });
 
-//formulaire
-
-// let myformButton = document.getElementById("formulaire");
-
-// myformButton.addEventListener("click", function () {
-//   getData();
-//   let newFullName = document.getElementById("fullname");
-//   let email = document.getElementById("fullEmail");
-//   let etatDepart = document.getElementById("depart");
-//   let etatArrive = document.getElementById("arrivee");
-
-//   let dateRes = document.getElementById("dateFinal");
-
-//   let oldvaleur = document.getElementById("finalPricce");
-//   let ValueTotal = document.querySelector("#prixTotal").innerText;
-
-//   console.log(ValueTotal);
-//   console.log(arrayTable[4]);
-
-//   newFullName.innerText = arrayTable[0];
-//   email.innerText = arrayTable[1];
-//   etatDepart.innerText = arrayTable[2];
-//   etatArrive.innerText = arrayTable[3];
-//   dateRes.innerText = arrayTable[4];
-
-//   console.log(dateRes);
-
-//   oldvaleur.innerText = ValueTotal;
-
-//   console.log(oldvaleur);
-
-//   //   console.log(newFullName)
-// });
-
 //checkbox
 
 for (let j = 0; j < checkbox.length; j++) {
@@ -329,3 +294,27 @@ btnShowFormil.addEventListener("click", () => {
     myResults.insertAdjacentHTML("beforeend", newChildForm);
   }
 });
+
+//city problem
+
+document
+  .getElementById("etatDepart")
+  .addEventListener("change", updateArrivalOptions);
+
+function updateArrivalOptions() {
+  const departSelect = document.getElementById("etatDepart");
+  const arriveeSelect = document.getElementById("etatArrive");
+  const selectedDepart = departSelect.value;
+
+  for (let i = 0; i < arriveeSelect.options.length; i++) {
+    arriveeSelect.options[i].disabled = false;
+  }
+
+  if (selectedDepart) {
+    for (let i = 0; i < arriveeSelect.options.length; i++) {
+      if (arriveeSelect.options[i].value === selectedDepart) {
+        arriveeSelect.options[i].disabled = true;
+      }
+    }
+  }
+}
